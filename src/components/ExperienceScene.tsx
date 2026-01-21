@@ -6,17 +6,21 @@ import { APPS_DATA, PlanetData } from '../data/portfolio'
 import { Suspense, useState } from 'react'
 import { CameraRig } from './CameraRig'
 
+import { PortfolioDetailsOverlay } from './PortfolioDetailsOverlay'
 import { PortfolioWindow } from './PortfolioWindow'
 
 export function ExperienceScene() {
     const [focusedPlanet, setFocusedPlanet] = useState<PlanetData | null>(null)
+    const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
     const handlePlanetClick = (planet: PlanetData) => {
         setFocusedPlanet(planet) // Set focus
+        setIsDetailsOpen(false) // Ensure details are closed when switching planets initially
     }
 
     const handleBackgroundClick = () => {
         setFocusedPlanet(null) // Reset focus on background click
+        setIsDetailsOpen(false)
     }
 
     return (
@@ -49,7 +53,18 @@ export function ExperienceScene() {
             </Canvas>
 
             {/* UI Overlay */}
-            <PortfolioWindow planet={focusedPlanet} />
+            <PortfolioWindow
+                planet={focusedPlanet}
+                onViewMore={() => setIsDetailsOpen(true)}
+            />
+
+            {/* Full Screen Details Overlay */}
+            {focusedPlanet && isDetailsOpen && (
+                <PortfolioDetailsOverlay
+                    planet={focusedPlanet}
+                    onClose={() => setIsDetailsOpen(false)}
+                />
+            )}
         </div>
     )
 }

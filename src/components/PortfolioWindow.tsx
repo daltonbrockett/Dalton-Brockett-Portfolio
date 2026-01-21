@@ -3,9 +3,10 @@ import { PlanetData } from '../data/portfolio';
 
 interface PortfolioWindowProps {
     planet: PlanetData | null;
+    onViewMore: () => void;
 }
 
-export function PortfolioWindow({ planet }: PortfolioWindowProps) {
+export function PortfolioWindow({ planet, onViewMore }: PortfolioWindowProps) {
     return (
         <AnimatePresence>
             {planet && (
@@ -70,6 +71,7 @@ export function PortfolioWindow({ planet }: PortfolioWindowProps) {
 
                         {/* Footer Action (Future proofing) */}
                         <button
+                            onClick={onViewMore}
                             className="mt-2 w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all
                                      hover:brightness-110 active:scale-[0.98]"
                             style={{
@@ -78,7 +80,7 @@ export function PortfolioWindow({ planet }: PortfolioWindowProps) {
                                 border: `1px solid ${planet.color}40`
                             }}
                         >
-                            View Details
+                            View More Details
                         </button>
                     </div>
                 </motion.div>

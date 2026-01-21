@@ -7,6 +7,16 @@ export interface PlanetData {
     speed: number;
     size: number;
     color: string;
+    details?: {
+        heroImage?: string;
+        images: string[];
+        videos: string[]; // YouTube/Vimeo links or direct URLs
+        techStack: string[];
+        role: string;
+        timeline: string;
+        longDescription: string;
+        links: { label: string; url: string }[];
+    };
 }
 
 export const APPS_DATA: PlanetData[] = [
@@ -18,7 +28,32 @@ export const APPS_DATA: PlanetData[] = [
         distance: 10,
         speed: 0.2,
         size: 1.2,
-        color: "#3b82f6"
+        color: "#3b82f6",
+        details: {
+            heroImage: "/assets/portfolio/Vehicle-Twin-Sim.jpeg", // Placeholder
+            images: [
+                "/assets/portfolio/IMG_9899.PNG",
+                "/assets/portfolio/IMG_0081.jpeg",
+                "assets/portfolio/IMG_9824.PNG"
+            ],
+            videos: [],
+            techStack: ["Unity", "C#", "C++", "ROS2", "LiDAR", "IR", "Sensor Fusion", "Computer Vision", "XR"],
+            role: "Mixed Reality Engineer",
+            timeline: "June 2025 - Sept 2025",
+            longDescription: `
+# Digital Twin Simulator & XR Sensor Fusion
+
+At **Distance Technologies Oy**, I worked on cutting-edge mixed reality tech for automotive applications. 
+
+## Key Achievements
+*   **Vehicle Digital Twin**: Built a comprehensive simulator in Unity interacting with ROS 2 topics.
+*   **Sensor Fusion**: Developed a pipeline combining LiDAR, RGB, and IR data for a glasses-free 3D display.
+*   **Performance**: Optimized rendering techniques to maintain <0.01ms latency overhead.
+            `,
+            links: [
+                { label: "Company Website", url: "https://distance.tech" }
+            ]
+        }
     },
     {
         id: 2,
