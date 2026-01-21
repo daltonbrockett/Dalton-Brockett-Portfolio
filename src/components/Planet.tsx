@@ -55,7 +55,7 @@ export function Planet({ planet, onClick }: PlanetProps) {
 
                 {/* Label */}
                 <Html position={[0, planet.size + 0.5, 0]} center distanceFactor={10}>
-                    <div className="pointer-events-none whitespace-nowrap text-white text-xs font-bold bg-black/50 px-2 py-1 rounded">
+                    <div className="pointer-events-none whitespace-nowrap text-white text-sm font-bold bg-black/50 px-2 py-1 rounded">
                         {planet.name}
                     </div>
                 </Html>

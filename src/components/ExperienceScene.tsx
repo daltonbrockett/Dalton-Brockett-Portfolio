@@ -6,6 +6,8 @@ import { APPS_DATA, PlanetData } from '../data/portfolio'
 import { Suspense, useState } from 'react'
 import { CameraRig } from './CameraRig'
 
+import { PortfolioWindow } from './PortfolioWindow'
+
 export function ExperienceScene() {
     const [focusedPlanet, setFocusedPlanet] = useState<PlanetData | null>(null)
 
@@ -18,7 +20,7 @@ export function ExperienceScene() {
     }
 
     return (
-        <div className="w-full h-screen bg-black">
+        <div className="w-full h-screen bg-black relative">
             <Canvas
                 camera={{ position: [0, 20, 35], fov: 45 }}
                 onPointerMissed={() => handleBackgroundClick()}
@@ -45,6 +47,9 @@ export function ExperienceScene() {
                     ))}
                 </Suspense>
             </Canvas>
+
+            {/* UI Overlay */}
+            <PortfolioWindow planet={focusedPlanet} />
         </div>
     )
 }
