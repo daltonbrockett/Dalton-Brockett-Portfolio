@@ -47,7 +47,12 @@ export function ExperienceScene() {
                 <Suspense fallback={null}>
                     <Sun />
                     {APPS_DATA.map((planet) => (
-                        <Planet key={planet.id} planet={planet} onClick={handlePlanetClick} />
+                        <Planet
+                            key={planet.id}
+                            planet={planet}
+                            onClick={handlePlanetClick}
+                            showLabels={!isDetailsOpen}
+                        />
                     ))}
                 </Suspense>
             </Canvas>

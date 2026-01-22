@@ -9,9 +9,10 @@ import { calculatePlanetPosition } from '../utils/orbitLogic'
 interface PlanetProps {
     planet: PlanetData;
     onClick: (planet: PlanetData) => void;
+    showLabels?: boolean;
 }
 
-export function Planet({ planet, onClick }: PlanetProps) {
+export function Planet({ planet, onClick, showLabels = true }: PlanetProps) {
     const meshRef = useRef<THREE.Mesh>(null)
     const [hovered, setHover] = useState(false)
     // initialAngle is handled inside calculatePlanetPosition now
@@ -54,11 +55,13 @@ export function Planet({ planet, onClick }: PlanetProps) {
                 <meshStandardMaterial color={hovered ? 'white' : planet.color} />
 
                 {/* Label */}
-                <Html position={[0, planet.size + 0.5, 0]} center distanceFactor={10}>
-                    <div className="pointer-events-none whitespace-nowrap text-white text-sm font-bold bg-black/50 px-2 py-1 rounded">
-                        {planet.name}
-                    </div>
-                </Html>
+                {showLabels && (
+                    <Html position={[0, planet.size + 0.5, 0]} center distanceFactor={10} style={{ pointerEvents: 'none' }}>
+                        <div className="pointer-events-none whitespace-nowrap text-white text-sm font-bold bg-black/50 px-2 py-1 rounded">
+                            {planet.name}
+                        </div>
+                    </Html>
+                )}
             </mesh>
         </group>
     )
