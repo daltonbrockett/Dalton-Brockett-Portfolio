@@ -15,35 +15,47 @@ export function PortfolioWindow({ planet, onViewMore }: PortfolioWindowProps) {
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: 20, scale: 0.95 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="absolute top-1/2 right-10 -translate-y-1/2 w-96 p-6 
-                             bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl
+                    className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] p-8 
+                             bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl
                              shadow-2xl shadow-black/50 overflow-hidden z-10 text-right"
                     style={{
-                        boxShadow: `0 0 40px ${planet.color}20` // Subtle colored glow
+                        boxShadow: `0 0 60px ${planet.color}20` // Subtle colored glow
                     }}
                 >
                     {/* Decorative colored line top */}
                     <div
-                        className="absolute top-0 right-0 w-full h-1"
+                        className="absolute top-0 right-0 w-full h-1 z-20"
                         style={{ backgroundColor: planet.color }}
                     />
 
-                    <div className="flex flex-col gap-4 items-end">
+                    {/* Hero Image */}
+                    {planet.details?.heroImage && (
+                        <div className="absolute top-0 left-0 w-full h-48 z-0">
+                            <img
+                                src={planet.details.heroImage}
+                                alt={planet.role}
+                                className="w-full h-full object-cover opacity-60 mask-image-gradient"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black/90" />
+                        </div>
+                    )}
+
+                    <div className={`flex flex-col gap-6 items-end relative z-10 ${planet.details?.heroImage ? 'mt-32' : ''}`}>
                         {/* Header */}
                         <div className="flex flex-col items-end">
-                            <div className="flex items-center gap-2 mb-1 justify-end">
+                            <div className="flex items-center gap-3 mb-2 justify-end">
                                 <span className="text-white/60 text-xs font-mono uppercase tracking-widest">
                                     ID: {String(planet.id).padStart(2, '0')}
                                 </span>
                                 <span
-                                    className="px-2 py-0.5 text-[10px] uppercase tracking-wider font-bold rounded-full text-black"
+                                    className="px-3 py-1 text-xs uppercase tracking-wider font-bold rounded-full text-black"
                                     style={{ backgroundColor: planet.color }}
                                 >
                                     {planet.type}
                                 </span>
                             </div>
-                            <h2 className="text-3xl font-bold text-white tracking-tight text-right">
-                                {planet.name}
+                            <h2 className="text-5xl font-bold text-white tracking-tight text-right leading-tight">
+                                {planet.role} - {planet.organization}
                             </h2>
                         </div>
 
@@ -51,22 +63,10 @@ export function PortfolioWindow({ planet, onViewMore }: PortfolioWindowProps) {
                         <div className="w-full h-px bg-white/20" />
 
                         {/* Content */}
-                        <div className="space-y-4 text-right">
-                            <p className="text-white leading-relaxed text-sm">
+                        <div className="space-y-4 text-right w-full">
+                            <p className="text-white/90 leading-relaxed text-lg">
                                 {planet.description}
                             </p>
-
-                            {/* Stats Grid */}
-                            <div className="grid grid-cols-2 gap-2 mt-2 w-full">
-                                <div className="bg-white/10 p-3 rounded-lg border border-white/10 flex flex-col items-end">
-                                    <div className="text-xs text-white uppercase tracking-wider mb-1">Orbit Distance</div>
-                                    <div className="text-white font-mono font-bold">{planet.distance} AU</div>
-                                </div>
-                                <div className="bg-white/10 p-3 rounded-lg border border-white/10 flex flex-col items-end">
-                                    <div className="text-xs text-white uppercase tracking-wider mb-1">Orbital Speed</div>
-                                    <div className="text-white font-mono font-bold">{planet.speed} km/s</div>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Footer Action (Future proofing) */}

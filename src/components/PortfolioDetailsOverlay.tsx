@@ -54,7 +54,7 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                         <div className="w-full h-64 md:h-96 rounded-3xl overflow-hidden mb-8 relative shrink-0">
                             <img
                                 src={details.heroImage}
-                                alt={`${planet.name} Hero`}
+                                alt={`${planet.role} Hero`}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -65,8 +65,8 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                                 >
                                     {planet.type}
                                 </span>
-                                <h1 className="text-5xl font-bold text-white mb-2">{planet.name}</h1>
-                                <p className="text-xl text-gray-300 font-mono">{details.role} <span className="mx-2 text-white/30">|</span> {details.timeline}</p>
+                                <h1 className="text-5xl font-bold text-white mb-2">{planet.role} - {planet.organization}</h1>
+                                <p className="text-xl text-gray-300 font-mono">{details.location} <span className="mx-2 text-white/30">|</span> {details.timeline}</p>
                             </div>
                         </div>
                     )}

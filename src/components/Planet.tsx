@@ -58,7 +58,7 @@ export function Planet({ planet, onClick, showLabels = true }: PlanetProps) {
                 {showLabels && (
                     <Html position={[0, planet.size + 0.5, 0]} center distanceFactor={10} style={{ pointerEvents: 'none' }}>
                         <div className="pointer-events-none whitespace-nowrap text-white text-sm font-bold bg-black/50 px-2 py-1 rounded">
-                            {planet.name}
+                            {planet.role}
                         </div>
                     </Html>
                 )}
