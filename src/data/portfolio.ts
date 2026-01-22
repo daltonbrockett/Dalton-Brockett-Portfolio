@@ -2,7 +2,7 @@ export interface PlanetData {
     id: number;
     role: string;
     organization: string;
-    type: "project" | "job";
+    type: "project" | "job" | "hackathon";
     description: string;
     distance: number;
     speed: number;
@@ -37,6 +37,7 @@ export const APPS_DATA: PlanetData[] = [
                 "/assets/portfolio/Vehicle-Twin-Sim.jpeg",
                 "/assets/portfolio/IMG_9899.PNG",
                 "/assets/portfolio/IMG_0081.jpeg",
+                "/assets/portfolio/Distance-Movies.PNG",
                 "assets/portfolio/IMG_9824.PNG"
             ],
             videos: [],
@@ -62,12 +63,33 @@ At **Distance Technologies Oy**, I worked on cutting-edge mixed reality tech for
         id: 2,
         role: "Gaze Groove",
         organization: "MIT Reality Hack",
-        type: "project",
+        type: "hackathon",
         description: "Winner: Best Use of STYLY. Apple Vision Pro app enabling musicians to practice with a virtual ensemble using gaze tracking & spatial audio.",
         distance: 15,
         speed: 0.25,
         size: 1.0,
-        color: "#ec4899"
+        color: "#ec4899",
+        details: {
+            heroImage: "/assets/portfolio/Gaze-Groove.jpeg",
+            images: [
+                "/assets/portfolio/Winner-MIT.jpeg",
+                "/assets/portfolio/Visual-Scripting.jpeg",
+                "/assets/portfolio/Snowy-MIT.jpeg",
+                "/assets/portfolio/VisionPro-Interaction.jpeg",
+                "/assets/portfolio/Plane-Boston.jpeg",
+                "/assets/portfolio/Dom.jpeg",
+            ],
+            videos: [],
+            techStack: ["Unity", "C#", "STYLY", "Apple Vision Pro", "Gaze Tracking", "Spatial Audio"],
+            location: "MIT",
+            timeline: "January 2025",
+            longDescription: `
+# Gaze Groove at MIT Reality Hack
+
+At **MIT Reality Hack**, I developed an 
+            `,
+            links: [{ label: "Devpost", url: "https://devpost.com/software/gaze-groove?_gl=1*1wwr9p6*_gcl_au*NDkxMDk1MjIxLjE3NjkwNTQ2NjE.*_ga*MTY1ODIzNTIyMS4xNzY5MDU0NjYx*_ga_0YHJK3Y10M*czE3NjkwNTQ2NjEkbzEkZzAkdDE3NjkwNTQ2NjEkajYwJGwwJGgw" }]
+        }
     },
     {
         id: 3,

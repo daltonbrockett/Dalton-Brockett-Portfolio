@@ -12,10 +12,6 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
 
     const { details } = planet;
 
-    // Helper to determine if a string is a video URL (basic check)
-    const isVideo = (url: string) => {
-        return url.match(/\.(mp4|webm|ogg)$/i) || url.includes("youtube.com") || url.includes("vimeo.com");
-    };
 
     return (
         <AnimatePresence>
@@ -71,10 +67,10 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                         </div>
                     )}
 
-                    {/* Content Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pb-20">
-                        {/* Left Column: Description & Tech */}
-                        <div className="lg:col-span-2 space-y-12">
+                    {/* Content Container - Flex Col */}
+                    <div className="pb-20 flex flex-col gap-16">
+                        {/* Top: Description, Tech, Links */}
+                        <div className="w-full space-y-12">
                             {/* Markdown Description */}
                             <div className="prose prose-invert prose-lg max-w-none text-gray-300">
                                 <ReactMarkdown>{details.longDescription}</ReactMarkdown>
@@ -94,6 +90,40 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                                         >
                                             {tech}
                                         </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Photos - Styled like other sections */}
+                            <div>
+                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                    <span className="w-1 h-6 bg-white rounded-full" />
+                                    Photos
+                                </h3>
+                                <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent snap-x snap-mandatory">
+                                    {/* Videos First */}
+                                    {details.videos && details.videos.map((vid, idx) => (
+                                        <div key={`vid-${idx}`} className="w-[80vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 relative bg-black snap-center shadow-2xl">
+                                            <video
+                                                controls
+                                                className="w-full h-full object-cover"
+                                                src={vid}
+                                            >
+                                                Your browser does not support the video tag.
+                                            </video>
+                                        </div>
+                                    ))}
+
+                                    {/* Images */}
+                                    {details.images && details.images.map((img, idx) => (
+                                        <div key={`img-${idx}`} className="w-[80vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 group cursor-zoom-in relative snap-center shadow-2xl">
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10" />
+                                            <img
+                                                src={img}
+                                                alt={`Gallery ${idx}`}
+                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -125,38 +155,6 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                             )}
                         </div>
 
-                        {/* Right Column: Gallery */}
-                        <div className="space-y-8">
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-6">Gallery</h3>
-                                <div className="grid gap-6">
-                                    {/* Videos First */}
-                                    {details.videos && details.videos.map((vid, idx) => (
-                                        <div key={`vid-${idx}`} className="aspect-video rounded-xl overflow-hidden border border-white/10 relative bg-black">
-                                            <video
-                                                controls
-                                                className="w-full h-full object-cover"
-                                                src={vid}
-                                            >
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        </div>
-                                    ))}
-
-                                    {/* Images */}
-                                    {details.images && details.images.map((img, idx) => (
-                                        <div key={`img-${idx}`} className="aspect-video rounded-xl overflow-hidden border border-white/10 group cursor-zoom-in relative">
-                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10" />
-                                            <img
-                                                src={img}
-                                                alt={`Gallery ${idx}`}
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                                            />
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </motion.div>
             </motion.div>
