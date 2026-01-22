@@ -38,21 +38,34 @@ export const APPS_DATA: PlanetData[] = [
                 "/assets/portfolio/IMG_9899.PNG",
                 "/assets/portfolio/IMG_0081.jpeg",
                 "/assets/portfolio/Distance-Movies.PNG",
-                "assets/portfolio/IMG_9824.PNG"
+                "assets/portfolio/IMG_9824.PNG",
+                "assets/portfolio/Awe.PNG",
+                "assets/portfolio/Noah.jpeg",
+                "assets/portfolio/SibNElv.jpeg",
+                "assets/portfolio/Take.jpeg"
             ],
-            videos: [],
-            techStack: ["Unity", "C#", "C++", "ROS2", "LiDAR", "IR", "Sensor Fusion", "Computer Vision", "XR"],
+            videos: [
+                "assets/portfolio/Sompafest.MOV"
+            ],
+            techStack: ["Unity", "C#", "C++", "ROS 2", "LiDAR", "IR", "Sensor Fusion", "Computer Vision", "OpenXR"],
             location: "Helsinki, Finland",
             timeline: "June 2025 - Sept 2025",
             longDescription: `
-# Digital Twin Simulator & XR Sensor Fusion
 
-At **Distance Technologies Oy**, I worked on cutting-edge mixed reality tech for automotive applications. 
+In the summer of 2025, I had the unique opportunity to work abroad in Helsinki, Finland! Contributing to cutting-edge mixed reality technology at Distance Technologies Oy. 
+My core focus was building and integrating a high fidelity vehicle digital twin simulator to test our platform's capabilities.
+Using Unity, I further developed a comprehensive simulator that generated and published ROS 2 topics, mimicking real world sensor outputs. 
+I then designed C++ ROS 2 subscribers into our Distance stack to be highly modular, allowing the system to work between simulated data and the real physical sensors without code changes.
+The optimized end-to-end system updated in real time with a negligible latency overhead of just ~0.01ms.  
 
-## Key Achievements
-*   **Vehicle Digital Twin**: Built a comprehensive simulator in Unity interacting with ROS 2 topics.
-*   **Sensor Fusion**: Developed a pipeline combining LiDAR, RGB, and IR data for a glasses-free 3D display.
-*   **Performance**: Optimized rendering techniques to maintain <0.01ms latency overhead.
+
+In my free time, I had a great time exploring Europe, meeting lots of new people, playing lots of music, and sauna'ing! I ended up traveling almost every weekend to different countries in Europe(thank you Alaskan Airline miles lol).
+In total I went to 9 different countries including: Estonia, Sweden, Denmark, UK, Austria, Czechia, Ireland(Mom and Dad met up with me :D), Netherlands, and of course Finland. Really excited
+to make my way back to that side of the Atlantic and explore some more.  
+
+
+Can't forget to mention the sauna culture! The Finns really know what they're doing. I went to sauna as much as I could, whether it be at my apartment, or my favorite community
+sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for the other sauna-goers. Those were some special days I'll remember for a long time.
             `,
             links: [
                 { label: "Company Website", url: "https://distance.tech" }

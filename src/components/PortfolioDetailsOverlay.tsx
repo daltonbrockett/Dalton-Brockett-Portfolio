@@ -98,7 +98,7 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                             <div>
                                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                                     <span className="w-1 h-6 bg-white rounded-full" />
-                                    Photos
+                                    Photos & Videos
                                 </h3>
                                 <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent snap-x snap-mandatory">
                                     {/* Videos First */}
