@@ -32,8 +32,8 @@ export function ExperienceScene() {
                 <color attach="background" args={['#000000']} />
 
                 {/* Lights */}
-                <ambientLight intensity={0.5} />
-                <pointLight position={[0, 0, 0]} intensity={2} color="#ffffff" distance={100} decay={2} />
+                <ambientLight intensity={2.0} />
+                <pointLight position={[0, 0, 0]} intensity={4} color="#ffffff" distance={100} decay={2} />
 
                 {/* Environment */}
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />

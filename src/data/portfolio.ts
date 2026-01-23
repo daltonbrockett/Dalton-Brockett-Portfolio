@@ -8,6 +8,10 @@ export interface PlanetData {
     speed: number;
     size: number;
     color: string;
+    texture?: string;
+    model?: "flag_fi";
+    modelPath?: string; // Path to .glb/.gltf file
+    modelScale?: number; // Scale of the imported model
     details?: {
         heroImage?: string;
         images: string[];
@@ -31,6 +35,9 @@ export const APPS_DATA: PlanetData[] = [
         speed: 0.2,
         size: 1.2,
         color: "#3b82f6",
+        texture: "/assets/textures/finland_archipelago_v2.png",
+        model: "flag_fi",
+        modelScale: 0.5,
         details: {
             heroImage: "/assets/portfolio/Distance.png",
             images: [
