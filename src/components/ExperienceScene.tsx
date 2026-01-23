@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
-import { Sun } from './Sun'
+import { Atom } from './Atom'
 import { Planet } from './Planet'
 import { APPS_DATA, PlanetData } from '../data/portfolio'
 import { Suspense, useState } from 'react'
@@ -45,7 +45,7 @@ export function ExperienceScene() {
                 <CameraRig focusedPlanet={focusedPlanet} />
 
                 <Suspense fallback={null}>
-                    <Sun />
+                    <Atom />
                     {APPS_DATA.map((planet) => (
                         <Planet
                             key={planet.id}
