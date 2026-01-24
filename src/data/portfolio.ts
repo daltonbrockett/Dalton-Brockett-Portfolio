@@ -174,7 +174,7 @@ At **Boeing**, I worked as a Software Engineering Intern
         size: 1.1,
         color: "#6366f1",
         details: {
-            heroImage: "/assets/portfolio/777-9.jpg",
+            heroImage: "/assets/portfolio/Everett.jpg",
             images: [
                 "/assets/portfolio/Wow-747.jpeg",
                 "/assets/portfolio/VRing.jpeg",
