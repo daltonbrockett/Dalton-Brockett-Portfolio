@@ -89,24 +89,34 @@ sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for
         speed: 0.25,
         size: 1.0,
         color: "#ec4899",
+        texture: "/assets/textures/snow.jpg",
         details: {
-            heroImage: "/assets/portfolio/Gaze-Groove.jpeg",
+            heroImage: "/assets/portfolio/Snowy-MIT.jpeg",
             images: [
                 "/assets/portfolio/Winner-MIT.jpeg",
-                "/assets/portfolio/Visual-Scripting.jpeg",
-                "/assets/portfolio/Snowy-MIT.jpeg",
                 "/assets/portfolio/VisionPro-Interaction.jpeg",
+                "/assets/portfolio/Gaze-Groove.jpeg",
                 "/assets/portfolio/Plane-Boston.jpeg",
                 "/assets/portfolio/Dom.jpeg",
+                "/assets/portfolio/Visual-Scripting.jpeg",
             ],
             videos: [],
-            techStack: ["Unity", "C#", "STYLY", "Apple Vision Pro", "Gaze Tracking", "Spatial Audio"],
+            techStack: ["Unity", "C# Visual Scripting", "STYLY", "Apple Vision Pro", "Gaze Tracking", "Spatial Audio", "Interaction Design"],
             location: "MIT",
             timeline: "January 2025",
             longDescription: `
-# Gaze Groove at MIT Reality Hack
+At **MIT Reality Hack**, my team and I won the **Best Use of STYLY** award!
 
-At **MIT Reality Hack**, I developed an 
+We built an XR tool on Apple Vision Pro that lets musicians rehearse with a virtual ensemble. My primary focus was on interaction design and the user's sense of agency. 
+I was responsible for scripting the gaze tracking and scene interaction mechanics, creating a system where a musician could control the ensemble simply by looking at the
+musician they wanted to cue in and then tapping their fingers together to play. 
+I also architected the overall app flow and audio logic to ensure a seamless practice session. 
+The experience was brought to life by a teammate who composed an original Latin Jazz score in under 24 hours!
+
+This was my first time in Boston and I absolutely loved it. The city is beautiful and the people are great. I took the trip from Seattle with one of
+best friends, Dom, who is also a developer. Dom and I had just come off another hackathon win at Stanford's "Immerse the Bay", where we actually got our
+invite to Reality Hack. I'm really glad we ended up going, it was a great time! I could definitely see myself going back to Boston in the future, might 
+have to get over Super Bowl XLIX first though lol... 
             `,
             links: [{ label: "Devpost", url: "https://devpost.com/software/gaze-groove?_gl=1*1wwr9p6*_gcl_au*NDkxMDk1MjIxLjE3NjkwNTQ2NjE.*_ga*MTY1ODIzNTIyMS4xNzY5MDU0NjYx*_ga_0YHJK3Y10M*czE3NjkwNTQ2NjEkbzEkZzAkdDE3NjkwNTQ2NjEkajYwJGwwJGgw" }]
         }
@@ -120,7 +130,20 @@ At **MIT Reality Hack**, I developed an
         distance: 20,
         speed: 0.15,
         size: 1.1,
-        color: "#0ea5e9"
+        color: "#0ea5e9",
+        details: {
+            heroImage: "/assets/portfolio/777-9.jpg",
+            images: [],
+            videos: [],
+            techStack: ["Unity", "C#", "HoloLens 2", "CAD", "Python"],
+            location: "Everett, WA",
+            timeline: "June 2024 - September 2024",
+            longDescription: `
+At **Boeing**, I worked as a Software Engineering Intern 
+
+            `,
+            links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
+        }
     },
     {
         id: 4,
