@@ -131,9 +131,16 @@ have to get over Super Bowl XLIX first though lol...
         speed: 0.15,
         size: 1.1,
         color: "#0ea5e9",
+        texture: "/assets/textures/runways_latitudinal.png",
         details: {
             heroImage: "/assets/portfolio/777-9.jpg",
-            images: [],
+            images: [
+                "/assets/portfolio/HoloLens.jpeg",
+                "/assets/portfolio/Planes.jpeg",
+                "/assets/portfolio/Relaxing.jpeg",
+                "/assets/portfolio/Backpacking.jpeg",
+                "/assets/portfolio/Beautiful-Guitar.jpeg",
+            ],
             videos: [],
             techStack: ["Unity", "C#", "HoloLens 2", "CAD", "Python"],
             location: "Everett, WA",
@@ -158,14 +165,33 @@ At **Boeing**, I worked as a Software Engineering Intern
     },
     {
         id: 5,
-        role: "VR Integration Intern",
+        role: "Virtual Reality Integration Intern",
         organization: "Boeing",
         type: "job",
         description: "Evaluated aircraft designs in IC.IDO VR for ergonomic improvements. Created immersive training resources for manufacturing workflows.",
         distance: 30,
         speed: 0.12,
         size: 1.1,
-        color: "#6366f1"
+        color: "#6366f1",
+        details: {
+            heroImage: "/assets/portfolio/777-9.jpg",
+            images: [
+                "/assets/portfolio/Wow-747.jpeg",
+                "/assets/portfolio/VRing.jpeg",
+                "/assets/portfolio/Dubs.jpeg",
+                "/assets/portfolio/Vives.jpeg",
+                "/assets/portfolio/Seattle-Night.jpeg",
+            ],
+            videos: [],
+            techStack: ["IC.IDO", "VR", "CAD", "Ergonomic Evaluation & Design"],
+            location: "Everett, WA",
+            timeline: "June 2024 - September 2024",
+            longDescription: `
+At **Boeing**, 
+
+            `,
+            links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
+        }
     },
     {
         id: 6,
