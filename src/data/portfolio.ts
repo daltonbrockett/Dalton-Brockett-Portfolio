@@ -187,7 +187,12 @@ At **Boeing**, I worked as a Software Engineering Intern
             location: "Everett, WA",
             timeline: "June 2024 - September 2024",
             longDescription: `
-At **Boeing**, 
+My freshman year of undergrad I was lucky enough to get an opportunity to intern at **Boeing**. I was a part of a collaboration between Boeing and the University of Washington called ALVA.
+
+During my time there, I worked in a VR lab where I would create immersive scenes and experiences using IC.IDO for Boeing engineers, mechanics, and other employees to use for ergonomic evaluations and training.
+My main project revolved mainly around analyzing and relaying the ergonomic impact of a specific manufacturing process on the Everett factory floor.
+
+In addition to my main project, I also worked on creating training resource videos for IC.IDO to use internally for Boeing employees to learn how to use the VR lab.
 
             `,
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
