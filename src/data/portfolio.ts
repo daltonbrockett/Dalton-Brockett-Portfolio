@@ -1,4 +1,4 @@
-export interface PlanetData {
+export interface PortfolioNodeData {
     id: number;
     role: string;
     organization: string;
@@ -8,10 +8,13 @@ export interface PlanetData {
     speed: number;
     size: number;
     color: string;
+    visualType: 'sphere' | 'model' | 'flag';
     texture?: string;
-    model?: "flag_fi";
     modelPath?: string; // Path to .glb/.gltf file
     modelScale?: number; // Scale of the imported model
+    rotationOffset?: number; // Offset in radians for the model rotation (Y-axis / Yaw)
+    pitchOffset?: number; // Offset in radians for X-axis rotation (Pitch)
+    rollOffset?: number; // Offset in radians for Z-axis rotation (Roll)
     details?: {
         heroImage?: string;
         images: string[];
@@ -24,7 +27,7 @@ export interface PlanetData {
     };
 }
 
-export const APPS_DATA: PlanetData[] = [
+export const APPS_DATA: PortfolioNodeData[] = [
     {
         id: 1,
         role: "Mixed Reality Engineer",
@@ -35,8 +38,8 @@ export const APPS_DATA: PlanetData[] = [
         speed: 0.2,
         size: 1.2,
         color: "#3b82f6",
+        visualType: 'flag',
         texture: "/assets/textures/finland_archipelago_v2.png",
-        model: "flag_fi",
         modelScale: 0.5,
         details: {
             heroImage: "/assets/portfolio/Distance.png",
@@ -89,6 +92,7 @@ sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for
         speed: 0.25,
         size: 1.0,
         color: "#ec4899",
+        visualType: 'sphere',
         texture: "/assets/textures/snow.jpg",
         details: {
             heroImage: "/assets/portfolio/Snowy-MIT.jpeg",
@@ -131,7 +135,12 @@ have to get over Super Bowl XLIX first though lol...
         speed: 0.15,
         size: 1.1,
         color: "#0ea5e9",
-        texture: "/assets/textures/runways_latitudinal.png",
+        visualType: 'model',
+        modelPath: "public/assets/models/boeing_787-9.glb",
+        modelScale: .1,
+        rotationOffset: -Math.PI / 20,
+        pitchOffset: -Math.PI / 1000,
+        rollOffset: Math.PI / 8,
         details: {
             heroImage: "/assets/portfolio/777-9.jpg",
             images: [
@@ -146,7 +155,7 @@ have to get over Super Bowl XLIX first though lol...
             location: "Everett, WA",
             timeline: "June 2024 - September 2024",
             longDescription: `
-At **Boeing**, I worked as a Software Engineering Intern 
+
 
             `,
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
@@ -161,7 +170,8 @@ At **Boeing**, I worked as a Software Engineering Intern
         distance: 25,
         speed: 0.18,
         size: 0.9,
-        color: "#22c55e"
+        color: "#22c55e",
+        visualType: 'sphere'
     },
     {
         id: 5,
@@ -173,6 +183,12 @@ At **Boeing**, I worked as a Software Engineering Intern
         speed: 0.12,
         size: 1.1,
         color: "#6366f1",
+        visualType: 'model',
+        modelPath: "/assets/models/boeing_747-8i.glb",
+        modelScale: .18, // Adjusted estimated scale, user can tune
+        rotationOffset: 0, // Yaw correction
+        pitchOffset: -Math.PI / 100,
+        rollOffset: Math.PI / 7,
         details: {
             heroImage: "/assets/portfolio/Everett.jpg",
             images: [
@@ -187,14 +203,17 @@ At **Boeing**, I worked as a Software Engineering Intern
             location: "Everett, WA",
             timeline: "June 2024 - September 2024",
             longDescription: `
-My freshman year of undergrad I was lucky enough to get an opportunity to intern at **Boeing**. I was a part of a collaboration between Boeing and the University of Washington called ALVA.
+My journey into immersive technology began during my freshman year when I was selected for the Boeing ALVA program, 
+a collaboration with the University of Washington(I was also part of the 25th cohort :D). Working within a specialized VR lab at Boeing, 
+I served as a bridge between XR development and industrial application by developing high fidelity simulations for ergonomic evaluations and immersive design reviews.
 
-During my time there, I worked in a VR lab where I would create immersive scenes and experiences using IC.IDO for Boeing engineers, mechanics, and other employees to use for ergonomic evaluations and training.
-My main project revolved mainly around analyzing and relaying the ergonomic impact of a specific manufacturing process on the Everett factory floor.
+My primary project involved using IC.IDO to analyze and relay the ergonomic impact of manufacturing processes on the Everett factory floor. 
+By creating immersive scenes, I enabled engineers and mechanics to visualize workflows and identify physical stressors in a risk-free virtual environment. 
+To ensure the long term utility of these tools, I also authored a suite of internal training resources and videos, 
+streamlining the onboarding process for Boeing employees and expanding the reach of the VR lab's capabilities.
 
-In addition to my main project, I also worked on creating training resource videos for IC.IDO to use internally for Boeing employees to learn how to use the VR lab.
-
-            `,
+After my internship concluded, I received a return offer from my team to join Boeing the next summer as a Software Engineering Intern!`,
+            //TODO: Add link from Software Engineering Intern to the actual SWE internship page
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
         }
     },
@@ -207,6 +226,7 @@ In addition to my main project, I also worked on creating training resource vide
         distance: 35,
         speed: 0.1,
         size: 0.95,
-        color: "#a855f7"
+        color: "#a855f7",
+        visualType: 'sphere'
     }
 ];

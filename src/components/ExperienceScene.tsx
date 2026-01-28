@@ -1,8 +1,8 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Stars } from '@react-three/drei'
 import { Atom } from './Atom'
-import { Planet } from './Planet'
-import { APPS_DATA, PlanetData } from '../data/portfolio'
+import { PortfolioNode } from './PortfolioNode'
+import { APPS_DATA, PortfolioNodeData } from '../data/portfolio'
 import { Suspense, useState } from 'react'
 import { CameraRig } from './CameraRig'
 
@@ -10,16 +10,16 @@ import { PortfolioDetailsOverlay } from './PortfolioDetailsOverlay'
 import { PortfolioWindow } from './PortfolioWindow'
 
 export function ExperienceScene() {
-    const [focusedPlanet, setFocusedPlanet] = useState<PlanetData | null>(null)
+    const [focusedNode, setFocusedNode] = useState<PortfolioNodeData | null>(null)
     const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
-    const handlePlanetClick = (planet: PlanetData) => {
-        setFocusedPlanet(planet) // Set focus
-        setIsDetailsOpen(false) // Ensure details are closed when switching planets initially
+    const handleNodeClick = (node: PortfolioNodeData) => {
+        setFocusedNode(node) // Set focus
+        setIsDetailsOpen(false) // Ensure details are closed when switching nodes initially
     }
 
     const handleBackgroundClick = () => {
-        setFocusedPlanet(null) // Reset focus on background click
+        setFocusedNode(null) // Reset focus on background click
         setIsDetailsOpen(false)
     }
 
@@ -39,18 +39,18 @@ export function ExperienceScene() {
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
                 {/* Controls - Disable manual orbit when focused */}
-                <OrbitControls enablePan={false} maxDistance={60} minDistance={10} enabled={!focusedPlanet} />
+                <OrbitControls enablePan={false} maxDistance={60} minDistance={10} enabled={!focusedNode} />
 
                 {/* Camera Rig - Takes over when focused */}
-                <CameraRig focusedPlanet={focusedPlanet} />
+                <CameraRig focusedPlanet={focusedNode} />
 
                 <Suspense fallback={null}>
                     <Atom />
-                    {APPS_DATA.map((planet) => (
-                        <Planet
-                            key={planet.id}
-                            planet={planet}
-                            onClick={handlePlanetClick}
+                    {APPS_DATA.map((node) => (
+                        <PortfolioNode
+                            key={node.id}
+                            node={node}
+                            onClick={handleNodeClick}
                             showLabels={!isDetailsOpen}
                         />
                     ))}
@@ -59,14 +59,14 @@ export function ExperienceScene() {
 
             {/* UI Overlay */}
             <PortfolioWindow
-                planet={focusedPlanet}
+                node={focusedNode}
                 onViewMore={() => setIsDetailsOpen(true)}
             />
 
             {/* Full Screen Details Overlay */}
-            {focusedPlanet && isDetailsOpen && (
+            {focusedNode && isDetailsOpen && (
                 <PortfolioDetailsOverlay
-                    planet={focusedPlanet}
+                    node={focusedNode}
                     onClose={() => setIsDetailsOpen(false)}
                 />
             )}

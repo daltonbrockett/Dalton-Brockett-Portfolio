@@ -1,16 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { PlanetData } from '../data/portfolio';
+import { PortfolioNodeData } from '../data/portfolio';
 import ReactMarkdown from 'react-markdown';
 
 interface PortfolioDetailsOverlayProps {
-    planet: PlanetData;
+    node: PortfolioNodeData;
     onClose: () => void;
 }
 
-export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOverlayProps) {
-    if (!planet.details) return null;
+export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverlayProps) {
+    if (!node.details) return null;
 
-    const { details } = planet;
+    const { details } = node;
 
 
     return (
@@ -50,18 +50,18 @@ export function PortfolioDetailsOverlay({ planet, onClose }: PortfolioDetailsOve
                         <div className="w-full h-64 md:h-96 rounded-3xl overflow-hidden mb-8 relative shrink-0">
                             <img
                                 src={details.heroImage}
-                                alt={`${planet.role} Hero`}
+                                alt={`${node.role} Hero`}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                             <div className="absolute bottom-8 left-8">
                                 <span
                                     className="px-3 py-1 text-xs uppercase tracking-wider font-bold rounded-full text-black mb-4 inline-block"
-                                    style={{ backgroundColor: planet.color }}
+                                    style={{ backgroundColor: node.color }}
                                 >
-                                    {planet.type}
+                                    {node.type}
                                 </span>
-                                <h1 className="text-5xl font-bold text-white mb-2">{planet.role} - {planet.organization}</h1>
+                                <h1 className="text-5xl font-bold text-white mb-2">{node.role} - {node.organization}</h1>
                                 <p className="text-xl text-gray-300 font-mono">{details.location} <span className="mx-2 text-white/30">|</span> {details.timeline}</p>
                             </div>
                         </div>

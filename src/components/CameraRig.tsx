@@ -1,10 +1,10 @@
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
-import { PlanetData } from '../data/portfolio'
+import { PortfolioNodeData } from '../data/portfolio'
 import { calculatePlanetPosition } from '../utils/orbitLogic'
 
 interface CameraRigProps {
-    focusedPlanet: PlanetData | null;
+    focusedPlanet: PortfolioNodeData | null;
 }
 
 export function CameraRig({ focusedPlanet }: CameraRigProps) {
