@@ -15,6 +15,7 @@ export interface PortfolioNodeData {
     rotationOffset?: number; // Offset in radians for the model rotation (Y-axis / Yaw)
     pitchOffset?: number; // Offset in radians for X-axis rotation (Pitch)
     rollOffset?: number; // Offset in radians for Z-axis rotation (Roll)
+    spinSpeed?: number; // Speed of auto-rotation around Y-axis
     details?: {
         heroImage?: string;
         images: string[];
@@ -92,8 +93,10 @@ sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for
         speed: 0.25,
         size: 1.0,
         color: "#ec4899",
-        visualType: 'sphere',
-        texture: "/assets/textures/snow.jpg",
+        visualType: 'model',
+        modelPath: "/assets/models/apple_vision_pro.glb",
+        modelScale: 5,
+        spinSpeed: 0.5,
         details: {
             heroImage: "/assets/portfolio/Snowy-MIT.jpeg",
             images: [

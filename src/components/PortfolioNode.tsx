@@ -98,6 +98,7 @@ export function PortfolioNode({ node, onClick, showLabels = true }: PortfolioNod
                         rotationOffset={node.rotationOffset}
                         pitchOffset={node.pitchOffset}
                         rollOffset={node.rollOffset}
+                        spinSpeed={node.spinSpeed}
                     />
                 )}
 
