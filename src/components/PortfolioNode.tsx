@@ -37,7 +37,6 @@ export function PortfolioNode({ node, onClick, showLabels = true }: PortfolioNod
             if (node.visualType === 'model') {
                 // Tangential Rotation for Models (Planes, etc.)
                 // Point along the orbit path.
-                // -t is often correct for standard CCW orbits to keep 'forward' alignment.
                 // Additional offsets (Yaw, Pitch, Roll) are handled by the child ImportedModel.
                 groupRef.current.rotation.y = -t;
 
@@ -84,7 +83,7 @@ export function PortfolioNode({ node, onClick, showLabels = true }: PortfolioNod
                 {/* Visual Component Switch */}
                 {node.visualType === 'sphere' && (
                     <PlanetSphere
-                        size={node.size}
+                        size={node.scale}
                         color={node.color}
                         texture={node.texture}
                         hovered={hovered}
@@ -94,7 +93,7 @@ export function PortfolioNode({ node, onClick, showLabels = true }: PortfolioNod
                 {node.visualType === 'model' && node.modelPath && (
                     <ImportedModel
                         path={node.modelPath}
-                        scale={node.modelScale}
+                        scale={node.scale}
                         rotationOffset={node.rotationOffset}
                         pitchOffset={node.pitchOffset}
                         rollOffset={node.rollOffset}
@@ -102,13 +101,13 @@ export function PortfolioNode({ node, onClick, showLabels = true }: PortfolioNod
                     />
                 )}
 
-                {node.visualType === 'flag' && (
-                    <FinnishFlag size={node.size} />
+                {node.flag && (
+                    <FinnishFlag size={node.scale} />
                 )}
 
                 {/* Label */}
                 {showLabels && (
-                    <Html position={[0, node.size + 0.5, 0]} center distanceFactor={10} style={{ pointerEvents: 'none' }}>
+                    <Html position={[0, node.scale + (node.titleOffset || 0) + 0.5, 0]} center distanceFactor={10} style={{ pointerEvents: 'none' }}>
                         <div className="pointer-events-none whitespace-nowrap text-white text-sm font-bold bg-black/50 px-2 py-1 rounded">
                             {node.role}
                         </div>

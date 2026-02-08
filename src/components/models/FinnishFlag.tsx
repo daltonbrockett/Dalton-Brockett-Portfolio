@@ -5,7 +5,7 @@ interface FinnishFlagProps {
 }
 
 export function FinnishFlag({ size }: FinnishFlagProps) {
-    const poleHeight = 1.0;
+    const poleHeight = 0.7;
     const flagWidth = 0.6;
     const flagHeight = 0.36;
     const blue = "#003580";

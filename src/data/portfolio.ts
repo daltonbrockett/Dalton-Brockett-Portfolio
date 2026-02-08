@@ -6,12 +6,13 @@ export interface PortfolioNodeData {
     description: string;
     distance: number;
     speed: number;
-    size: number;
+    scale: number; // Unified scale for both spheres and models
+    titleOffset?: number; // Optional vertical offset for the title label
     color: string;
-    visualType: 'sphere' | 'model' | 'flag';
+    visualType: 'sphere' | 'model';
     texture?: string;
+    flag?: boolean;
     modelPath?: string; // Path to .glb/.gltf file
-    modelScale?: number; // Scale of the imported model
     rotationOffset?: number; // Offset in radians for the model rotation (Y-axis / Yaw)
     pitchOffset?: number; // Offset in radians for X-axis rotation (Pitch)
     rollOffset?: number; // Offset in radians for Z-axis rotation (Roll)
@@ -37,11 +38,12 @@ export const APPS_DATA: PortfolioNodeData[] = [
         description: "Built a vehicle-digital-twin simulator in Unity (C#) interacting with ROS 2 (LiDAR, RGB, IR). Developed a sensor-fusion pipeline for an XR Night Vision system.",
         distance: 10,
         speed: 0.2,
-        size: 1.2,
+        scale: 1.4,
+        titleOffset: 0.5,
         color: "#3b82f6",
-        visualType: 'flag',
+        visualType: 'sphere',
         texture: "/assets/textures/finland_archipelago_v2.png",
-        modelScale: 0.5,
+        flag: true,
         details: {
             heroImage: "/assets/portfolio/Distance.png",
             images: [
@@ -91,11 +93,11 @@ sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for
         description: "Winner: Best Use of STYLY. Apple Vision Pro app enabling musicians to practice with a virtual ensemble using gaze tracking & spatial audio.",
         distance: 15,
         speed: 0.25,
-        size: 1.0,
+        scale: 5,
+        titleOffset: -3,
         color: "#ec4899",
         visualType: 'model',
         modelPath: "/assets/models/apple_vision_pro.glb",
-        modelScale: 5,
         spinSpeed: 0.5,
         details: {
             heroImage: "/assets/portfolio/Snowy-MIT.jpeg",
@@ -136,11 +138,11 @@ have to get over Super Bowl XLIX first though lol...
         description: "Developed HoloLens 2 CAD viewer tools using Unity/C#. Implemented game controller functionality for CAD software in Python.",
         distance: 20,
         speed: 0.15,
-        size: 1.1,
+        scale: 0.1,
+        titleOffset: 1,
         color: "#0ea5e9",
         visualType: 'model',
         modelPath: "public/assets/models/boeing_787-9.glb",
-        modelScale: .1,
         rotationOffset: -Math.PI / 20,
         pitchOffset: -Math.PI / 1000,
         rollOffset: Math.PI / 8,
@@ -172,7 +174,7 @@ have to get over Super Bowl XLIX first though lol...
         description: "Built a fully functional AR headset from scratch. Created custom vertex processors/shaders (Three.js, GLSL) and integrated hardware/IMU.",
         distance: 25,
         speed: 0.18,
-        size: 0.9,
+        scale: 0.9,
         color: "#22c55e",
         visualType: 'sphere'
     },
@@ -184,11 +186,11 @@ have to get over Super Bowl XLIX first though lol...
         description: "Evaluated aircraft designs in IC.IDO VR for ergonomic improvements. Created immersive training resources for manufacturing workflows.",
         distance: 30,
         speed: 0.12,
-        size: 1.1,
+        scale: 0.18,
+        titleOffset: 2,
         color: "#6366f1",
         visualType: 'model',
         modelPath: "/assets/models/boeing_747-8i.glb",
-        modelScale: .18, // Adjusted estimated scale, user can tune
         rotationOffset: 0, // Yaw correction
         pitchOffset: -Math.PI / 100,
         rollOffset: Math.PI / 7,
@@ -228,7 +230,7 @@ After my internship concluded, I received a return offer from my team to join Bo
         description: "Designed a native 3D mixed-reality storyboarding app for Apple Vision Pro. Implemented hand-joint-based gesture recognition.",
         distance: 35,
         speed: 0.1,
-        size: 0.95,
+        scale: 0.95,
         color: "#a855f7",
         visualType: 'sphere'
     }
