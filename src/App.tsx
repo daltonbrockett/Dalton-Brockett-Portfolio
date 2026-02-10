@@ -1,8 +1,12 @@
 import { ExperienceScene } from './components/ExperienceScene'
+import { Loader } from '@react-three/drei'
 
 function App() {
   return (
-    <ExperienceScene />
+    <>
+      <ExperienceScene />
+      <Loader />
+    </>
   )
 }
 
