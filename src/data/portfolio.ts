@@ -142,7 +142,7 @@ have to get over Super Bowl XLIX first though lol...
         titleOffset: 1,
         color: "#0ea5e9",
         visualType: 'model',
-        modelPath: "public/assets/models/boeing_787-9.glb",
+        modelPath: "/assets/models/boeing_787-9.glb",
         rotationOffset: 0,
         pitchOffset: 0,
         rollOffset: Math.PI / 7,
