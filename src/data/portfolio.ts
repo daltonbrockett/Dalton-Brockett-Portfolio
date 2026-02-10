@@ -91,7 +91,7 @@ sauna, Sompasauna. I'd go with some of my coworkers and play guitar and sing for
         organization: "MIT Reality Hack",
         type: "hackathon",
         description: "Winner: Best Use of STYLY. Apple Vision Pro app enabling musicians to practice with a virtual ensemble using gaze tracking & spatial audio.",
-        distance: 15,
+        distance: 25,
         speed: 0.25,
         scale: 5,
         titleOffset: -3,
@@ -136,16 +136,16 @@ have to get over Super Bowl XLIX first though lol...
         organization: "Boeing",
         type: "job",
         description: "Developed HoloLens 2 CAD viewer tools using Unity/C#. Implemented game controller functionality for CAD software in Python.",
-        distance: 20,
+        distance: 15,
         speed: 0.15,
         scale: 0.1,
         titleOffset: 1,
         color: "#0ea5e9",
         visualType: 'model',
         modelPath: "public/assets/models/boeing_787-9.glb",
-        rotationOffset: -Math.PI / 20,
-        pitchOffset: -Math.PI / 1000,
-        rollOffset: Math.PI / 8,
+        rotationOffset: 0,
+        pitchOffset: 0,
+        rollOffset: Math.PI / 7,
         details: {
             heroImage: "/assets/portfolio/777-9.jpg",
             images: [
@@ -166,33 +166,22 @@ have to get over Super Bowl XLIX first though lol...
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
         }
     },
-    {
-        id: 4,
-        role: "Augmented Reality Headset",
-        organization: "Hardware Project",
-        type: "project",
-        description: "Built a fully functional AR headset from scratch. Created custom vertex processors/shaders (Three.js, GLSL) and integrated hardware/IMU.",
-        distance: 25,
-        speed: 0.18,
-        scale: 0.9,
-        color: "#22c55e",
-        visualType: 'sphere'
-    },
+
     {
         id: 5,
         role: "Virtual Reality Integration Intern",
         organization: "Boeing",
         type: "job",
         description: "Evaluated aircraft designs in IC.IDO VR for ergonomic improvements. Created immersive training resources for manufacturing workflows.",
-        distance: 30,
+        distance: 20,
         speed: 0.12,
-        scale: 0.18,
+        scale: 0.12,
         titleOffset: 2,
         color: "#6366f1",
         visualType: 'model',
         modelPath: "/assets/models/boeing_747-8i.glb",
         rotationOffset: 0, // Yaw correction
-        pitchOffset: -Math.PI / 100,
+        pitchOffset: -Math.PI / 1000,
         rollOffset: Math.PI / 7,
         details: {
             heroImage: "/assets/portfolio/Everett.jpg",
@@ -222,16 +211,5 @@ After my internship concluded, I received a return offer from my team to join Bo
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
         }
     },
-    {
-        id: 6,
-        role: "StoryboardXR",
-        organization: "UW",
-        type: "project",
-        description: "Designed a native 3D mixed-reality storyboarding app for Apple Vision Pro. Implemented hand-joint-based gesture recognition.",
-        distance: 35,
-        speed: 0.1,
-        scale: 0.95,
-        color: "#a855f7",
-        visualType: 'sphere'
-    }
+
 ];
