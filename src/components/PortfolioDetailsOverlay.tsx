@@ -121,6 +121,7 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
                                             <img
                                                 src={img}
                                                 alt={`Gallery ${idx}`}
+                                                loading="lazy"
                                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                             />
                                         </div>
