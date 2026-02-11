@@ -51,7 +51,7 @@ export function ExperienceScene() {
                             key={node.id}
                             node={node}
                             onClick={handleNodeClick}
-                            showLabels={!isDetailsOpen}
+                            showLabels={!focusedNode}
                         />
                     ))}
                 </Suspense>
