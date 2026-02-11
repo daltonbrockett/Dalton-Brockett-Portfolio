@@ -61,6 +61,7 @@ export function ExperienceScene() {
             <PortfolioWindow
                 node={focusedNode}
                 onViewMore={() => setIsDetailsOpen(true)}
+                onClose={() => setFocusedNode(null)}
             />
 
             {/* Full Screen Details Overlay */}

@@ -4,9 +4,10 @@ import { PortfolioNodeData } from '../data/portfolio';
 interface PortfolioWindowProps {
     node: PortfolioNodeData | null;
     onViewMore: () => void;
+    onClose: () => void;
 }
 
-export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
+export function PortfolioWindow({ node, onViewMore, onClose }: PortfolioWindowProps) {
     return (
         <AnimatePresence>
             {node && (
@@ -28,6 +29,17 @@ export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
                         style={{ backgroundColor: node.color }}
                     />
 
+                    {/* Close Button */}
+                    <button
+                        onClick={onClose}
+                        className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-white/20 text-white/70 hover:text-white transition-all z-30"
+                        aria-label="Close"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                    </button>
+
                     {/* Hero Image */}
                     {node.details?.heroImage && (
                         <div className="absolute top-0 left-0 w-full h-32 md:h-48 z-0">
@@ -44,9 +56,7 @@ export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
                         {/* Header */}
                         <div className="flex flex-col items-end">
                             <div className="flex items-center gap-3 mb-2 justify-end">
-                                <span className="text-white/60 text-[10px] md:text-xs font-mono uppercase tracking-widest">
-                                    ID: {String(node.id).padStart(2, '0')}
-                                </span>
+                                {/* REMOVED ID DISPLAY */}
                                 <span
                                     className="px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs uppercase tracking-wider font-bold rounded-full text-black"
                                     style={{ backgroundColor: node.color }}
