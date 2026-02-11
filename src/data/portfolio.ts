@@ -160,8 +160,19 @@ have to get over Super Bowl XLIX first though lol...
             location: "Everett, WA",
             timeline: "June 2024 - September 2024",
             longDescription: `
+Back for round two! This summer was more R&D focused in nature. My main objective was to determine if 
+we could develop a HoloLens 2 control interface for our internal software. 
+I was responsible for writing the C# code to stream data from the headset to our software's API, 
+enabling us to drive the viewpoint of CAD scenes in near real-time.
+In parallel, I developed Python interfaces to integrate game controllers and other alternative input devices into our internal ecosystem.
+I also took advantage of Boeing's "Learning Together Program" which covered the tuition for five of my college credits that I was taking at the time!
 
+Between my two summers here, I was lucky enough to go on a lot of factory tours. While I can't share photos of the floor, I can say this: if you ever get the chance to tour an aircraft factory, take it.
+I'm incredibly grateful to the team I worked with; you all helped me grow a lot as an engineer and human. 
+And a huge shoutout to Steve for the sick guitar!!
 
+Outside of work, I got to go backpacking for the first time! My friends and I went to the west coast just south of Third Beach. If you're
+into backpacking, I can't recommend that area highly enough. So so beautiful. 
             `,
             links: [{ label: "Boeing Website", url: "https://www.boeing.com" }]
         }
