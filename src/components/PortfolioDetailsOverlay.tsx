@@ -43,42 +43,43 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 50, opacity: 0 }}
                     transition={{ delay: 0.1, duration: 0.4 }}
-                    className="w-full h-full max-w-7xl mx-auto p-8 relative flex flex-col"
+                    className="w-full h-full max-w-7xl mx-auto p-4 md:p-8 relative flex flex-col"
                 >
                     {/* Hero Section */}
                     {details.heroImage && (
-                        <div className="w-full h-64 md:h-96 rounded-3xl overflow-hidden mb-8 relative shrink-0">
+                        <div className="w-full h-48 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden mb-6 md:mb-8 relative shrink-0">
                             <img
                                 src={details.heroImage}
                                 alt={`${node.role} Hero`}
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                            <div className="absolute bottom-8 left-8">
+                            <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 right-4">
                                 <span
-                                    className="px-3 py-1 text-xs uppercase tracking-wider font-bold rounded-full text-black mb-4 inline-block"
+                                    className="px-2 py-1 md:px-3 text-[10px] md:text-xs uppercase tracking-wider font-bold rounded-full text-black mb-2 md:mb-4 inline-block"
                                     style={{ backgroundColor: node.color }}
                                 >
                                     {node.type}
                                 </span>
-                                <h1 className="text-5xl font-bold text-white mb-2">{node.role} - {node.organization}</h1>
-                                <p className="text-xl text-gray-300 font-mono">{details.location} <span className="mx-2 text-white/30">|</span> {details.timeline}</p>
+                                <h1 className="text-2xl md:text-5xl font-bold text-white mb-1 md:mb-2 leading-tight">{node.role}</h1>
+                                <h2 className="text-xl md:text-3xl text-white/80 mb-2">{node.organization}</h2>
+                                <p className="text-sm md:text-xl text-gray-300 font-mono">{details.location} <span className="mx-2 text-white/30">|</span> {details.timeline}</p>
                             </div>
                         </div>
                     )}
 
                     {/* Content Container - Flex Col */}
-                    <div className="pb-20 flex flex-col gap-16">
+                    <div className="pb-20 flex flex-col gap-8 md:gap-16">
                         {/* Top: Description, Tech, Links */}
-                        <div className="w-full space-y-12">
+                        <div className="w-full space-y-8 md:space-y-12">
                             {/* Markdown Description */}
-                            <div className="prose prose-invert prose-lg max-w-none text-gray-300">
+                            <div className="prose prose-invert prose-sm md:prose-lg max-w-none text-gray-300">
                                 <ReactMarkdown>{details.longDescription}</ReactMarkdown>
                             </div>
 
                             {/* Tech Stack */}
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
                                     <span className="w-1 h-6 bg-white rounded-full" />
                                     Technology Stack
                                 </h3>
@@ -86,7 +87,7 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
                                     {details.techStack.map((tech) => (
                                         <span
                                             key={tech}
-                                            className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-mono text-gray-300 hover:border-white/30 transition-colors"
+                                            className="px-3 py-1.5 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-lg text-xs md:text-sm font-mono text-gray-300 hover:border-white/30 transition-colors"
                                         >
                                             {tech}
                                         </span>
@@ -96,14 +97,14 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
 
                             {/* Photos - Styled like other sections */}
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
                                     <span className="w-1 h-6 bg-white rounded-full" />
                                     Photos & Videos
                                 </h3>
-                                <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent snap-x snap-mandatory">
+                                <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent snap-x snap-mandatory">
                                     {/* Videos First */}
                                     {details.videos && details.videos.map((vid, idx) => (
-                                        <div key={`vid-${idx}`} className="w-[80vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 relative bg-black snap-center shadow-2xl">
+                                        <div key={`vid-${idx}`} className="w-[85vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 relative bg-black snap-center shadow-2xl">
                                             <video
                                                 controls
                                                 className="w-full h-full object-cover"
@@ -116,7 +117,7 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
 
                                     {/* Images */}
                                     {details.images && details.images.map((img, idx) => (
-                                        <div key={`img-${idx}`} className="w-[80vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 group cursor-zoom-in relative snap-center shadow-2xl">
+                                        <div key={`img-${idx}`} className="w-[85vw] md:w-[600px] shrink-0 aspect-video rounded-xl overflow-hidden border border-white/10 group cursor-zoom-in relative snap-center shadow-2xl">
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10" />
                                             <img
                                                 src={img}
@@ -132,7 +133,7 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
                             {/* Links */}
                             {details.links.length > 0 && (
                                 <div>
-                                    <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                                    <h3 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
                                         <span className="w-1 h-6 bg-white rounded-full" />
                                         Links & Resources
                                     </h3>
@@ -143,7 +144,7 @@ export function PortfolioDetailsOverlay({ node, onClose }: PortfolioDetailsOverl
                                                 href={link.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:brightness-110 transition-all flex items-center gap-2"
+                                                className="px-4 py-3 md:px-6 bg-white text-black font-bold rounded-lg hover:brightness-110 transition-all flex items-center gap-2 text-sm md:text-base"
                                             >
                                                 {link.label}
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

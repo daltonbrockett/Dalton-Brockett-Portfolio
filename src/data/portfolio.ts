@@ -57,9 +57,9 @@ export const APPS_DATA: PortfolioNodeData[] = [
                 "assets/portfolio/SibNElv.jpeg",
                 "assets/portfolio/Take.jpeg"
             ],
-            videos: [
-                "assets/portfolio/Sompafest.MOV"
-            ],
+            /*videos: [
+                "/assets/portfolio/Sompafest.MOV"
+            ],*/
             techStack: ["Unity", "C#", "C++", "ROS 2", "LiDAR", "IR", "Sensor Fusion", "Computer Vision", "OpenXR"],
             location: "Helsinki, Finland",
             timeline: "June 2025 - Sept 2025",

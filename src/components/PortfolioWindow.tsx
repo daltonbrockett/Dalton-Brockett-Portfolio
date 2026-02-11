@@ -15,7 +15,7 @@ export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
                     animate={{ opacity: 1, x: 0, scale: 1 }}
                     exit={{ opacity: 0, x: 20, scale: 0.95 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="absolute top-1/2 right-10 -translate-y-1/2 w-[500px] p-8 
+                    className="absolute top-1/2 right-4 md:right-10 -translate-y-1/2 w-[90vw] md:w-[500px] p-6 md:p-8 
                              bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl
                              shadow-2xl shadow-black/50 overflow-hidden z-10 text-right"
                     style={{
@@ -30,7 +30,7 @@ export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
 
                     {/* Hero Image */}
                     {node.details?.heroImage && (
-                        <div className="absolute top-0 left-0 w-full h-48 z-0">
+                        <div className="absolute top-0 left-0 w-full h-32 md:h-48 z-0">
                             <img
                                 src={node.details.heroImage}
                                 alt={node.role}
@@ -40,22 +40,23 @@ export function PortfolioWindow({ node, onViewMore }: PortfolioWindowProps) {
                         </div>
                     )}
 
-                    <div className={`flex flex-col gap-6 items-end relative z-10 ${node.details?.heroImage ? 'mt-32' : ''}`}>
+                    <div className={`flex flex-col gap-4 md:gap-6 items-end relative z-10 ${node.details?.heroImage ? 'mt-24 md:mt-32' : ''}`}>
                         {/* Header */}
                         <div className="flex flex-col items-end">
                             <div className="flex items-center gap-3 mb-2 justify-end">
-                                <span className="text-white/60 text-xs font-mono uppercase tracking-widest">
+                                <span className="text-white/60 text-[10px] md:text-xs font-mono uppercase tracking-widest">
                                     ID: {String(node.id).padStart(2, '0')}
                                 </span>
                                 <span
-                                    className="px-3 py-1 text-xs uppercase tracking-wider font-bold rounded-full text-black"
+                                    className="px-2 py-0.5 md:px-3 md:py-1 text-[10px] md:text-xs uppercase tracking-wider font-bold rounded-full text-black"
                                     style={{ backgroundColor: node.color }}
                                 >
                                     {node.type}
                                 </span>
                             </div>
-                            <h2 className="text-5xl font-bold text-white tracking-tight text-right leading-tight">
-                                {node.role} - {node.organization}
+                            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight text-right leading-tight">
+                                {node.role}
+                                <span className="block text-xl md:text-3xl text-white/80 mt-1">{node.organization}</span>
                             </h2>
                         </div>
 
