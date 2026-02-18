@@ -59,37 +59,37 @@ export function Atom() {
                 {/* Front Text */}
                 <Text
                     fontSize={0.8}
-                    color="#60a5fa"
+                    color="#c084fc"
                     anchorX="center"
                     anchorY="middle"
                     outlineWidth={0.02}
-                    outlineColor="#1e3a8a"
+                    outlineColor="#581c87"
                     characters="DaltonBrockett"
                 >
                     Dalton Brockett
-                    <meshBasicMaterial attach="material" color="#60a5fa" toneMapped={false} />
+                    <meshBasicMaterial attach="material" color="#c084fc" toneMapped={false} />
                 </Text>
                 {/* Back Text (Rotated 180) */}
                 <Text
                     fontSize={0.8}
-                    color="#60a5fa"
+                    color="#c084fc"
                     anchorX="center"
                     anchorY="middle"
                     outlineWidth={0.02}
-                    outlineColor="#1e3a8a"
+                    outlineColor="#581c87"
                     characters="DaltonBrockett"
                     rotation={[0, Math.PI, 0]}
                 >
                     Dalton Brockett
-                    <meshBasicMaterial attach="material" color="#60a5fa" toneMapped={false} />
+                    <meshBasicMaterial attach="material" color="#c084fc" toneMapped={false} />
                 </Text>
             </group>
 
             {/* Electrons with Plane Rotation */}
-            <Electron radius={3} speed={1.5} color="#38bdf8" rotation={[Math.PI / 3, 0, 0]} planeSpeed={0.2} />
-            <Electron radius={3} speed={1.2} color="#38bdf8" rotation={[-Math.PI / 3, 0, 0]} planeSpeed={-0.15} />
-            <Electron radius={3} speed={1.8} color="#38bdf8" rotation={[0, Math.PI / 2, Math.PI / 4]} planeSpeed={0.1} />
-            <Electron radius={3} speed={1.4} color="#38bdf8" rotation={[0, 0, 0]} planeSpeed={-0.25} />
+            <Electron radius={3} speed={1.5} color="#d8b4fe" rotation={[Math.PI / 3, 0, 0]} planeSpeed={0.2} />
+            <Electron radius={3} speed={1.2} color="#d8b4fe" rotation={[-Math.PI / 3, 0, 0]} planeSpeed={-0.15} />
+            <Electron radius={3} speed={1.8} color="#d8b4fe" rotation={[0, Math.PI / 2, Math.PI / 4]} planeSpeed={0.1} />
+            <Electron radius={3} speed={1.4} color="#d8b4fe" rotation={[0, 0, 0]} planeSpeed={-0.25} />
         </group>
     )
 }

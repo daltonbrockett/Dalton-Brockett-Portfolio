@@ -9,7 +9,11 @@ import { CameraRig } from './CameraRig'
 import { PortfolioDetailsOverlay } from './PortfolioDetailsOverlay'
 import { PortfolioWindow } from './PortfolioWindow'
 
-export function ExperienceScene() {
+interface ExperienceSceneProps {
+    started: boolean;
+}
+
+export function ExperienceScene({ started }: ExperienceSceneProps) {
     const [focusedNode, setFocusedNode] = useState<PortfolioNodeData | null>(null)
     const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
@@ -51,7 +55,7 @@ export function ExperienceScene() {
                             key={node.id}
                             node={node}
                             onClick={handleNodeClick}
-                            showLabels={!focusedNode}
+                            showLabels={started && !focusedNode}
                         />
                     ))}
                 </Suspense>
