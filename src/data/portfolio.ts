@@ -123,7 +123,7 @@ I also architected the overall app flow and audio logic to ensure a seamless pra
 The experience was brought to life by a teammate who composed an original Latin Jazz score in under 24 hours!
 
 This was my first time in Boston and I absolutely loved it. The city is beautiful and the people are great. I took the trip from Seattle with one of
-best friends, Dom, who is also a developer. Dom and I had just come off another hackathon win at Stanford's "Immerse the Bay", where we actually got our
+my best friends, Dom, who is also a developer. Dom and I had just come off another hackathon win at Stanford's "Immerse the Bay", where we actually got our
 invite to Reality Hack. I'm really glad we ended up going, it was a great time! I could definitely see myself going back to Boston in the future, might 
 have to get over Super Bowl XLIX first though lol... 
             `,
