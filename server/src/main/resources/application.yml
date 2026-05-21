@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/portfolio_analytics}
+    username: ${DB_USERNAME:dalton}
+    password: ${DB_PASSWORD:localdev}
+
+  # Flyway handles schema migrations (replaces the old spring.sql.init approach)
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # JPA / Hibernate configuration
+  jpa:
+    hibernate:
+      # 'validate' tells Hibernate to CHECK that the entity classes match the database
+      # tables, but NOT to create or modify tables — that's Flyway's job.
+      # Other options: 'create', 'create-drop', 'update', 'none'
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: ${PORT:8080}
+
+analytics:
+  dashboard-password: ${ANALYTICS_PASSWORD:changeme}
