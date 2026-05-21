@@ -69,7 +69,7 @@ In the summer of 2025, I had the unique opportunity to work abroad in Helsinki, 
 My core focus was building and integrating a high fidelity vehicle digital twin simulator to test our platform's capabilities.
 Using Unity, I further developed a comprehensive simulator that generated and published ROS 2 topics, mimicking real world sensor outputs. 
 I then designed C++ ROS 2 subscribers into our Distance stack to be highly modular, allowing the system to work between simulated data and the real physical sensors without code changes.
-The optimized end-to-end system updated in real time with a negligible latency overhead of just ~0.01ms.  
+The optimized end-to-end system updated in real time with a ~10ms latency overhead.  
 
 
 In my free time, I had a great time exploring Europe, meeting lots of new people, playing lots of music, and sauna'ing! I ended up traveling almost every weekend to different countries in Europe(thank you Alaskan Airline miles lol).
