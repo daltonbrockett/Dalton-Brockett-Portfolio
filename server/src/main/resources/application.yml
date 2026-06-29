@@ -26,3 +26,4 @@ server:
 
 analytics:
   dashboard-password: ${ANALYTICS_PASSWORD:changeme}
+  ip-salt: ${ANALYTICS_IP_SALT:}

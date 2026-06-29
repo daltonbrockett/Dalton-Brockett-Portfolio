@@ -9,6 +9,7 @@ import com.dalton.analytics.repository.DashboardRepository;
 import com.dalton.analytics.repository.EventRepository;
 import com.dalton.analytics.repository.SessionRepository;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -26,6 +27,9 @@ import java.util.UUID;
  */
 @Service
 public class AnalyticsService {
+
+    @Value("${analytics.ip-salt:}")
+    private String ipSalt;
 
     private final SessionRepository sessionRepo;
     private final EventRepository eventRepo;
@@ -175,12 +179,13 @@ public class AnalyticsService {
     }
 
     /**
-     * Hash an IP address with SHA-256 for privacy.
+     * Hash an IP address with SHA-256 + salt for privacy.
      */
     private String hashIp(String ip) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hash = digest.digest(ip.getBytes(StandardCharsets.UTF_8));
+            String saltedIp = ip + (ipSalt != null ? ipSalt : "");
+            byte[] hash = digest.digest(saltedIp.getBytes(StandardCharsets.UTF_8));
             return HexFormat.of().formatHex(hash);
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("SHA-256 not available", e);
