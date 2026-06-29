@@ -8,6 +8,7 @@ import { CameraRig } from './CameraRig'
 
 import { PortfolioDetailsOverlay } from './PortfolioDetailsOverlay'
 import { PortfolioWindow } from './PortfolioWindow'
+import { trackEvent } from '../utils/analytics'
 
 interface ExperienceSceneProps {
     started: boolean;
@@ -20,6 +21,7 @@ export function ExperienceScene({ started }: ExperienceSceneProps) {
     const handleNodeClick = (node: PortfolioNodeData) => {
         setFocusedNode(node) // Set focus
         setIsDetailsOpen(false) // Ensure details are closed when switching nodes initially
+        trackEvent('node_click', { role: node.role, org: node.org })
     }
 
     const handleBackgroundClick = () => {
@@ -64,7 +66,12 @@ export function ExperienceScene({ started }: ExperienceSceneProps) {
             {/* UI Overlay */}
             <PortfolioWindow
                 node={focusedNode}
-                onViewMore={() => setIsDetailsOpen(true)}
+                onViewMore={() => {
+                    setIsDetailsOpen(true)
+                    if (focusedNode) {
+                        trackEvent('detail_view', { role: focusedNode.role, org: focusedNode.org })
+                    }
+                }}
                 onClose={() => setFocusedNode(null)}
             />
 
