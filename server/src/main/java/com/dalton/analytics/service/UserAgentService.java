@@ -50,11 +50,11 @@ public class UserAgentService {
     private String inferDeviceType(String userAgent, Client client) {
         String ua = userAgent.toLowerCase();
 
-        if (ua.contains("mobile") || ua.contains("android") && !ua.contains("tablet")) {
-            return "mobile";
-        }
         if (ua.contains("tablet") || ua.contains("ipad")) {
             return "tablet";
+        }
+        if (ua.contains("mobile") || ua.contains("android")) {
+            return "mobile";
         }
         return "desktop";
     }
